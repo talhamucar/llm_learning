@@ -45,22 +45,47 @@ The project is organized into five core modules:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com
-    cd your-repo-name
+    git clone https://github.com/talhamucar/llm_learning
+    cd llm_learning
     ```
-2.  **Set up your environment:**
+
+2.  **Install uv** (if not already installed):
 
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    pip install -r requirements.txt
+    pip install uv
     ```
-3.  **Configure your API Keys:**
 
-    Create a `.env` file in the root directory and add your credentials:
+3.  **Set up your environment and install dependencies:**
+
+    ```bash
+    uv sync
+    ```
+
+    This creates a `.venv/` virtual environment and installs all dependencies from `pyproject.toml`.
+
+4.  **Activate the environment** (optional — `uv run` handles this automatically):
+
+    ```bash
+    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+    ```
+
+5.  **Configure your API Keys:**
+
+    Copy `.env.example` to `.env` and fill in your credentials:
+
+    ```bash
+    cp .env.example .env
+    ```
 
     ```env
     OPENAI_API_KEY=your_openai_key
     ANTHROPIC_API_KEY=your_anthropic_key
+    GOOGLE_API_KEY=your_google_gemini_key
     TAVILY_API_KEY=your_search_api_key  # Useful for Agents
+    ```
+
+6.  **Launch Jupyter:**
+
+    ```bash
+    uv run jupyter notebook
     ```

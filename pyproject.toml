@@ -1,0 +1,38 @@
+[project]
+name = "llm-learning"
+version = "0.1.0"
+description = "Hands-on guide to mastering LLMs — from fundamentals to production"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # Jupyter
+    "jupyter>=1.1.1",
+    "ipykernel>=6.29.0",
+    "ipywidgets>=8.1.0",
+    # Environment
+    "python-dotenv>=1.0.0",
+    # LLM APIs
+    "openai>=1.30.0",
+    "anthropic>=0.28.0",
+    "google-generativeai>=0.7.0",
+    # UI
+    "gradio>=4.36.0",
+    # RAG / Vector DBs
+    "chromadb>=0.5.0",
+    "faiss-cpu>=1.8.0",
+    "sentence-transformers>=3.0.0",
+    # Fine-tuning
+    "transformers>=4.41.0",
+    "peft>=0.11.0",
+    "datasets>=2.20.0",
+    "accelerate>=0.30.0",
+    "trl>=0.8.6",
+    # Tokenization
+    "tiktoken>=0.7.0",
+    "sentencepiece>=0.2.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.4.0",
+]
